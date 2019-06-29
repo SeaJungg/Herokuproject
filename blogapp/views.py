@@ -7,8 +7,6 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import User
 from django.contrib import auth
 
-import dj_database_url db_from_env = dj_database_url.config() DATABASES['default'].update(db_from_env)
-
 def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
@@ -40,7 +38,7 @@ def index(request) :
             return render(request, 'index.html', {'error': 'username or password is incorrect.'})
     else:
         blog = Blog.objects
-        blog_list = Blog.objects.all()
+        blog_list = Blog.objects.get_queryset().order_by('title')
         paginator = Paginator(blog_list, 3)
         page = request.GET.get('page')
         posts = paginator.get_page(page)
