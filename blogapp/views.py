@@ -7,6 +7,8 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+import dj_database_url db_from_env = dj_database_url.config() DATABASES['default'].update(db_from_env)
+
 def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
