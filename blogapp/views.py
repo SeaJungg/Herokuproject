@@ -38,7 +38,7 @@ def index(request) :
             return render(request, 'index.html', {'error': 'username or password is incorrect.'})
     else:
         blog = Blog.objects
-        blog_list = Blog.objects.get_queryset().order_by('id')
+        blog_list = Blog.objects.all()
         paginator = Paginator(blog_list, 3)
         page = request.GET.get('page')
         posts = paginator.get_page(page)
