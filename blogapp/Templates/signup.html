@@ -1,27 +1,25 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<div class="container">
-        <br>
-        <h1>Sign Up!</h1>
-    
-        <form method="POST" action ="{%url 'signup' %}">
-            {% csrf_token %}
-            Username:
-            <br>
-            <input name="username" type="text" value="">
-            <br>
-            Password:
-            <br>
-            <input name="password1" type="password1" value="">
-            <br>
-            Password Confirm:
-            <br>
-            <input name="password2" type="password2" value="">
-            <br>
-            <br>
-            <input class="btn btn-primary" type="submit" value="Sign Up!">
-        </form>
-    </div>
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="container">
+                <br>
+                <h1>Sign Up!</h1>    
+                <form name="form1" method="POST" action ="{%url 'signup' %}">
+                    {% csrf_token %}
+                    Username:<br><input name="txtID" type="text" value=""><br>
+                    Password:<br><input name="txtPwd" type="password" value=""><br>
+                    Password Confirm:<br><input name="txtPwd2" type="password" value=""><br>
+                    <br>
+                    <input class="btn btn-primary" id='btn' type="submit" value="Sign Up!">
+                </form>
+        </div>    
+    </body>
+
+</html>
+
 
 {% endblock %}

@@ -9,9 +9,9 @@ from django.contrib import auth
 
 def signup(request):
     if request.method == 'POST':
-        if request.POST['password1'] == request.POST['password2']:
+        if request.POST['txtPwd'] == request.POST['txtPwd2']:
             user = User.objects.create_user(
-                request.POST['username'], password=request.POST['password1'])
+                request.POST['txtID'], password=request.POST['txtPwd'])
             auth.login(request, user)
             return redirect('index')
     return render(request, 'signup.html')

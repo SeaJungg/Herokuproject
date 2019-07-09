@@ -1,0 +1,82 @@
+
+        <!-- 첫번째 방법 : 원래 있는 함수 이용 -->
+        <input type = 'button' value='jayroo' onclick="alert('Hi! I am Javascript')">
+        <br>
+
+        <!-- 두번째 방법 : 원래 있는 함수를 이용하는데 다른 함수를 거침-->
+        <input type = 'button' value='3*4' onclick='mul(3,4)'>
+        <script> function mul(n1, n2){
+            return alert(n1*n2);
+        }
+        </script>
+        
+
+        <!-- 세번째 방법 : DOM이용 -->
+        <p id = 'dom_ex1'>Hello World</p>
+        <p id = 'dom_ex2'></p>
+        <script>
+            document.getElementById("dom_ex2").style.color='green';
+            document.getElementById("dom_ex2").innerHTML="Hello World";
+        </script>
+        <!-- 스크립트에 ID를 써서 스크립트를 태그에다가 꽂아줌-->
+
+
+        <!-- 버튼을 누르면 / 글자가 나타나는 예제-->
+        <h1> helloworld</h1>
+            <input type = 'button' value='나타나랏' onclick='appear()'>
+            
+            <p id = 'test'></p>
+            <script>
+                var test = document.getElementById('test');
+                function appear(){
+                    test.innerHTML = '돔돔 돔돔돔돔'
+                }    
+            </script>
+
+        
+        <!-- input 태그에서 실행하는 함수가 변화시킬 대상의 ID를 스크립트 안에서 변수로 불러옴-->
+        
+        <p id = 'sea'></p>
+        <script>
+        btn.addEventlistener('Click',function(event){alert("helloworld");});
+
+        function btn_eventlistner(event){
+            switch(event.target.id){
+                case 'btn1':
+                    test.innerHTML = 'Hello';
+                    break;
+                case 'btn2':
+                    test.innerHTML = 'World';
+
+            }
+        }
+
+        btn1.addEventlistener('click', btn_EL);
+        btn2.addEventlistener('click', btn_EL);
+
+        </script>
+
+
+        <br>
+
+        <script>
+                function Verify(){
+                    var Rule = /^[A-za-z]{8,20}/g;
+                    var P1 = document.getElementById('p1');
+                    var P2 = document.getElementById('p2');
+                    if (form.txtID.value == "")
+                    {
+                          alert("아이디를 입력해야 합니다!");
+                          form.txtID.focus();//포커스를 id박스로 이동.
+                          return;
+                    }
+    
+                    if (Rule.test(document.getElementById('username').value)){ 
+                        alert('아이디가 조건에 맞지 않습니다'); 
+                        return;
+                    }
+                }
+            
+            
+            </script>
+       
